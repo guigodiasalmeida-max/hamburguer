@@ -1,64 +1,156 @@
-const menuItems = {
-  cafes: [
-    ["Espresso Âmbar","Intenso, encorpado e com notas de chocolate.","R$ 8,90","https://images.unsplash.com/photo-1510707577719-ae7c14805e3a?auto=format&fit=crop&w=700&q=85"],
-    ["Cappuccino","Espresso, leite vaporizado e uma nuvem de espuma.","R$ 14,90","https://images.unsplash.com/photo-1572449043416-55f4685c9bb7?auto=format&fit=crop&w=700&q=85"],
-    ["Latte de Baunilha","Café cremoso com leite e toque delicado de baunilha.","R$ 16,90","https://images.unsplash.com/photo-1561882468-9110e03e0f78?auto=format&fit=crop&w=700&q=85"],
-    ["Cold Brew","Extraído a frio por 18 horas. Suave e refrescante.","R$ 17,90","https://images.unsplash.com/photo-1461023058943-07fcbe16d735?auto=format&fit=crop&w=700&q=85"],
-    ["Mocha","Espresso, chocolate artesanal e leite cremoso.","R$ 18,90","https://images.unsplash.com/photo-1578314675249-a6910f80cc4e?auto=format&fit=crop&w=700&q=85"],
-    ["Filtrado do Dia","Um grão especial preparado na hora.","R$ 15,90","https://images.unsplash.com/photo-1498804103079-a6351b050096?auto=format&fit=crop&w=700&q=85"]
-  ],
-  doces: [
-    ["Bolo de Cenoura","Massa fofinha com cobertura de chocolate intenso.","R$ 14,90","https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=700&q=85"],
-    ["Cheesecake de Frutas","Base crocante, creme suave e frutas frescas.","R$ 19,90","https://images.unsplash.com/photo-1565958011703-44f9829ba187?auto=format&fit=crop&w=700&q=85"],
-    ["Cookie de Chocolate","Cookie artesanal, crocante por fora e macio por dentro.","R$ 10,90","https://images.unsplash.com/photo-1499636136210-6f4ee915583e?auto=format&fit=crop&w=700&q=85"]
-  ],
-  salgados: [
-    ["Croissant de Queijo","Massa folhada dourada com queijo cremoso.","R$ 17,90","https://images.unsplash.com/photo-1555507036-ab1f4038808a?auto=format&fit=crop&w=700&q=85"],
-    ["Toast Caprese","Pão artesanal, tomate, muçarela e pesto fresco.","R$ 23,90","https://images.unsplash.com/photo-1525351484163-7529414344d8?auto=format&fit=crop&w=700&q=85"],
-    ["Pão de Queijo","Quentinho, dourado e feito com receita da casa.","R$ 9,90","https://images.unsplash.com/photo-1628258547276-7f7a0c6f4f2f?auto=format&fit=crop&w=700&q=85"]
-  ]
-};
+/* ============================================================
+   BRASA BURGER — script.js
+   Menu mobile, header on scroll, scroll reveal, cardápio (toast)
+   ============================================================ */
+(function () {
+  "use strict";
 
-const grid = document.querySelector('#menu-grid');
-function renderMenu(category='cafes'){
-  grid.innerHTML = menuItems[category].map(item => `
-    <article class="menu-card reveal">
-      <img src="${item[3]}" alt="${item[0]}" loading="lazy">
-      <div class="menu-card-top"><h3>${item[0]}</h3><span class="price">${item[2]}</span></div>
-      <p>${item[1]}</p>
-    </article>`).join('');
-  requestAnimationFrame(()=>document.querySelectorAll('.menu-card').forEach(el=>el.classList.add('show')));
-}
-renderMenu();
+  /* -----------------------------------------------------------
+     Header: muda de estilo ao rolar a página
+  ----------------------------------------------------------- */
+  var header = document.getElementById("site-header");
+  function handleHeaderScroll() {
+    if (window.scrollY > 12) {
+      header.classList.add("is-scrolled");
+    } else {
+      header.classList.remove("is-scrolled");
+    }
+  }
+  handleHeaderScroll();
+  window.addEventListener("scroll", handleHeaderScroll, { passive: true });
 
-document.querySelectorAll('.tab').forEach(tab=>{
-  tab.addEventListener('click',()=>{
-    document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
-    tab.classList.add('active');
-    renderMenu(tab.dataset.category);
+  /* -----------------------------------------------------------
+     Menu mobile
+  ----------------------------------------------------------- */
+  var menuToggle = document.getElementById("menu-toggle");
+  var mobileNav = document.getElementById("mobile-nav");
+
+  function openMobileNav() {
+    mobileNav.classList.add("is-open");
+    menuToggle.setAttribute("aria-expanded", "true");
+    menuToggle.setAttribute("aria-label", "Fechar menu");
+    document.body.style.overflow = "hidden";
+  }
+
+  function closeMobileNav() {
+    mobileNav.classList.remove("is-open");
+    menuToggle.setAttribute("aria-expanded", "false");
+    menuToggle.setAttribute("aria-label", "Abrir menu");
+    document.body.style.overflow = "";
+  }
+
+  menuToggle.addEventListener("click", function () {
+    var isOpen = mobileNav.classList.contains("is-open");
+    if (isOpen) {
+      closeMobileNav();
+    } else {
+      openMobileNav();
+    }
   });
-});
 
-const header=document.querySelector('#header');
-const backTop=document.querySelector('#back-top');
-window.addEventListener('scroll',()=>{
-  header.classList.toggle('scrolled',scrollY>60);
-  backTop.classList.toggle('visible',scrollY>500);
-});
-backTop.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
+  // Fecha o menu mobile ao clicar em qualquer link dele
+  mobileNav.querySelectorAll("a").forEach(function (link) {
+    link.addEventListener("click", closeMobileNav);
+  });
 
-const observer=new IntersectionObserver(entries=>{
-  entries.forEach(entry=>{if(entry.isIntersecting)entry.target.classList.add('show')});
-},{threshold:.12});
-document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+  // Fecha o menu mobile com a tecla Esc
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape" && mobileNav.classList.contains("is-open")) {
+      closeMobileNav();
+      menuToggle.focus();
+    }
+  });
 
-const toggle=document.querySelector('.menu-toggle');
-const nav=document.querySelector('#nav');
-toggle.addEventListener('click',()=>nav.classList.toggle('open'));
-nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>nav.classList.remove('open')));
-document.querySelector('#year').textContent=new Date().getFullYear();
+  /* -----------------------------------------------------------
+     Scroll reveal (Intersection Observer)
+  ----------------------------------------------------------- */
+  var revealEls = document.querySelectorAll("[data-reveal]");
+  var prefersReducedMotion = window.matchMedia(
+    "(prefers-reduced-motion: reduce)"
+  ).matches;
 
-const glow=document.querySelector('.cursor-glow');
-window.addEventListener('mousemove',e=>{
-  glow.style.left=e.clientX+'px';glow.style.top=e.clientY+'px';
-});
+  if (prefersReducedMotion || !("IntersectionObserver" in window)) {
+    revealEls.forEach(function (el) {
+      el.classList.add("is-visible");
+    });
+  } else {
+    var revealObserver = new IntersectionObserver(
+      function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+            revealObserver.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.15, rootMargin: "0px 0px -60px 0px" }
+    );
+
+    revealEls.forEach(function (el, index) {
+      // pequeno atraso escalonado dentro de um mesmo grupo (hero, cards, etc.)
+      el.style.transitionDelay = (index % 6) * 70 + "ms";
+      revealObserver.observe(el);
+    });
+  }
+
+  /* -----------------------------------------------------------
+     Cardápio: botão "Adicionar ao pedido" + toast de confirmação
+  ----------------------------------------------------------- */
+  var toast = document.getElementById("toast");
+  var toastTimeout = null;
+
+  function showToast(message) {
+    toast.textContent = message;
+    toast.classList.add("is-visible");
+
+    if (toastTimeout) {
+      clearTimeout(toastTimeout);
+    }
+    toastTimeout = setTimeout(function () {
+      toast.classList.remove("is-visible");
+    }, 2600);
+  }
+
+  document.querySelectorAll(".btn--add").forEach(function (button) {
+    button.addEventListener("click", function () {
+      var itemName = button.getAttribute("data-name") || "Item";
+      var originalText = button.textContent;
+
+      button.classList.add("is-added");
+      button.textContent = "Adicionado ✓";
+      showToast(itemName + " adicionado ao pedido.");
+
+      setTimeout(function () {
+        button.classList.remove("is-added");
+        button.textContent = originalText;
+      }, 1800);
+    });
+  });
+
+  /* -----------------------------------------------------------
+     Smooth scroll com offset do header fixo
+  ----------------------------------------------------------- */
+  var headerHeight = header.offsetHeight;
+
+  document.querySelectorAll('a[href^="#"]').forEach(function (link) {
+    link.addEventListener("click", function (e) {
+      var targetId = link.getAttribute("href");
+      if (targetId.length <= 1) return;
+
+      var target = document.querySelector(targetId);
+      if (!target) return;
+
+      e.preventDefault();
+      var top =
+        target.getBoundingClientRect().top +
+        window.pageYOffset -
+        headerHeight -
+        8;
+
+      window.scrollTo({
+        top: top,
+        behavior: prefersReducedMotion ? "auto" : "smooth",
+      });
+    });
+  });
+})();
