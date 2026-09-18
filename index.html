@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Brasa Burger — O sabor que vem da brasa</title>
+<meta name="description" content="Brasa Burger — hambúrguer artesanal feito na brasa. Sabor intenso, ingredientes de respeito.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700;9..144,900&family=Sora:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<a class="skip-link" href="#main">Pular para o conteúdo</a>
+
+<!-- HEADER -->
+<header class="site-header" id="site-header">
+  <div class="header-inner">
+    <a href="#topo" class="logo" aria-label="Brasa Burger, início">
+      <span class="logo-line">Brasa</span>
+      <span class="logo-line logo-line--accent">Burger</span>
+    </a>
+
+    <nav class="main-nav" id="main-nav" aria-label="Navegação principal">
+      <ul>
+        <li><a href="#topo">Início</a></li>
+        <li><a href="#cardapio">Cardápio</a></li>
+        <li><a href="#nossa-brasa">Nossa Brasa</a></li>
+        <li><a href="#avaliacoes">Avaliações</a></li>
+        <li><a href="#contato">Contato</a></li>
+      </ul>
+    </nav>
+
+    <div class="header-actions">
+      <a href="#contato" class="btn btn--primary">Pedir agora <span aria-hidden="true">↗</span></a>
+      <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobile-nav">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+
+  <!-- MOBILE NAV -->
+  <nav class="mobile-nav" id="mobile-nav" aria-label="Navegação mobile">
+    <ul>
+      <li><a href="#topo">Início</a></li>
+      <li><a href="#cardapio">Cardápio</a></li>
+      <li><a href="#nossa-brasa">Nossa Brasa</a></li>
+      <li><a href="#avaliacoes">Avaliações</a></li>
+      <li><a href="#contato">Contato</a></li>
+    </ul>
+    <a href="#contato" class="btn btn--primary btn--block">Pedir agora <span aria-hidden="true">↗</span></a>
+  </nav>
+</header>
+
+<main id="main">
+
+  <!-- HERO -->
+  <section class="hero" id="topo">
+    <div class="hero-glow" aria-hidden="true"></div>
+    <div class="hero-inner">
+      <div class="hero-content">
+        <p class="hero-kicker">Feito na hora, na brasa</p>
+        <h1 class="hero-title">
+          <span data-reveal>O sabor que</span>
+          <span data-reveal>vem da brasa.</span>
+        </h1>
+        <p class="hero-sub" data-reveal>
+          Hambúrguer artesanal, ingredientes de respeito e aquele sabor que faz você fechar os olhos na primeira mordida.
+        </p>
+
+        <div class="hero-actions" data-reveal>
+          <a href="#cardapio" class="btn btn--primary btn--lg">Ver cardápio <span aria-hidden="true">↗</span></a>
+          <a href="#nossa-brasa" class="btn btn--ghost btn--lg">Conheça a Brasa</a>
+        </div>
+
+        <div class="hero-meta" data-reveal>
+          <span class="hero-meta-item">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 2l2.9 6.6L22 9.3l-5 4.9 1.2 7-6.2-3.4-6.2 3.4L7 14.2l-5-4.9 7.1-.7L12 2z" fill="currentColor"/></svg>
+            4,9 no Google
+          </span>
+          <span class="hero-meta-divider" aria-hidden="true"></span>
+          <span class="hero-meta-item">Feito na hora</span>
+        </div>
+      </div>
+
+      <div class="hero-visual" data-reveal>
+        <div class="hero-badge">Feito na Brasa</div>
+        <div class="hero-frame">
+          <svg class="hero-burger" viewBox="0 0 480 480" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Ilustração de um hambúrguer artesanal com fumaça saindo">
+            <defs>
+              <radialGradient id="glow" cx="50%" cy="35%" r="65%">
+                <stop offset="0%" stop-color="#3a2a1c"/>
+                <stop offset="100%" stop-color="#10100F"/>
+              </radialGradient>
+              <linearGradient id="bunTop" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#DDA64B"/>
+                <stop offset="100%" stop-color="#c17f2b"/>
+              </linearGradient>
+              <linearGradient id="patty" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#5a3420"/>
+                <stop offset="100%" stop-color="#3a2013"/>
+              </linearGradient>
+              <linearGradient id="cheese" x1="0" y1="0" x2="1" y2="0.3">
+                <stop offset="0%" stop-color="#f2b632"/>
+                <stop offset="100%" stop-color="#e0961e"/>
+              </linearGradient>
+            </defs>
+            <rect width="480" height="480" fill="url(#glow)"/>
+            <g class="smoke" aria-hidden="true">
+              <path d="M160 210 q-18 -30 0 -55 q18 -25 0 -55" stroke="#F5EBDD" stroke-opacity="0.18" stroke-width="8" fill="none" stroke-linecap="round"/>
+              <path d="M320 200 q20 -28 2 -52 q-18 -24 4 -58" stroke="#F5EBDD" stroke-opacity="0.14" stroke-width="7" fill="none" stroke-linecap="round"/>
+              <path d="M240 190 q14 -26 -4 -48 q-18 -22 2 -54" stroke="#F5EBDD" stroke-opacity="0.16" stroke-width="6" fill="none" stroke-linecap="round"/>
+            </g>
+            <ellipse cx="240" cy="410" rx="150" ry="18" fill="#000000" opacity="0.35"/>
+            <path d="M110 250 q130 -70 260 0 q10 20 -8 34 H118 q-18 -14 -8 -34z" fill="url(#bunTop)"/>
+            <g fill="#F5EBDD" opacity="0.9">
+              <circle cx="175" cy="235" r="4"/><circle cx="205" cy="222" r="4"/><circle cx="240" cy="216" r="4.5"/>
+              <circle cx="278" cy="222" r="4"/><circle cx="308" cy="235" r="4"/>
+            </g>
+            <path d="M110 284 h260 l-10 14 q-4 6 -12 6 H132 q-8 0 -12 -6z" fill="#7cb342"/>
+            <rect x="112" y="304" width="256" height="30" rx="6" fill="url(#cheese)"/>
+            <path d="M112 304 l24 26 l24 -26 l24 26 l24 -26 l24 26 l24 -26 l24 26 l24 -26 l16 8v-8z" fill="url(#cheese)"/>
+            <rect x="106" y="336" width="268" height="42" rx="10" fill="url(#patty)"/>
+            <rect x="118" y="382" width="244" height="26" rx="8" fill="#8c5a2b"/>
+            <path d="M112 408 q128 46 256 0 v14 q-128 44 -256 0 z" fill="#241B16"/>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MARQUEE -->
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee-track">
+      <span>BRASA ACESA</span><span class="dot">•</span>
+      <span>SABOR SEM PRESSA</span><span class="dot">•</span>
+      <span>HAMBÚRGUER DE VERDADE</span><span class="dot">•</span>
+      <span>BRASA ACESA</span><span class="dot">•</span>
+      <span>SABOR SEM PRESSA</span><span class="dot">•</span>
+      <span>HAMBÚRGUER DE VERDADE</span><span class="dot">•</span>
+      <span>BRASA ACESA</span><span class="dot">•</span>
+      <span>SABOR SEM PRESSA</span><span class="dot">•</span>
+      <span>HAMBÚRGUER DE VERDADE</span><span class="dot">•</span>
+    </div>
+  </div>
+
+  <!-- CARDÁPIO -->
+  <section class="menu" id="cardapio">
+    <div class="section-inner">
+      <div class="section-head">
+        <h2 class="section-title">Escolha seu<br>novo favorito.</h2>
+        <p class="section-sub">Receitas autorais, ingredientes frescos e combinações feitas para dar vontade de repetir.</p>
+      </div>
+
+      <div class="menu-grid">
+
+        <article class="menu-card" data-reveal>
+          <div class="menu-card-media">
+            <svg viewBox="0 0 200 140" aria-hidden="true"><rect width="200" height="140" fill="#241B16"/><ellipse cx="100" cy="105" rx="70" ry="10" fill="#000" opacity=".3"/><path d="M40 70 q60 -32 120 0 q4 10 -4 16H44q-8-6-4-16z" fill="#DDA64B"/><rect x="42" y="86" width="116" height="14" rx="5" fill="#f2b632"/><rect x="38" y="100" width="124" height="18" rx="8" fill="#5a3420"/><path d="M40 118 q60 20 120 0v8q-60 18-120 0z" fill="#241B16"/></svg>
+            <span class="menu-tag">Mais pedido</span>
+          </div>
+          <div class="menu-card-body">
+            <div class="menu-card-top">
+              <h3>Brasa Clássico</h3>
+              <span class="menu-price">R$ 29,90</span>
+            </div>
+            <p>Blend bovino, cheddar cremoso, cebola caramelizada e molho da casa.</p>
+            <button class="btn btn--add" data-name="Brasa Clássico">Adicionar ao pedido</button>
+          </div>
+        </article>
+
+        <article class="menu-card" data-reveal>
+          <div class="menu-card-media">
+            <svg viewBox="0 0 200 140" aria-hidden="true"><rect width="200" height="140" fill="#241B16"/><ellipse cx="100" cy="105" rx="70" ry="10" fill="#000" opacity=".3"/><path d="M40 70 q60 -32 120 0 q4 10 -4 16H44q-8-6-4-16z" fill="#DDA64B"/><rect x="40" y="86" width="120" height="16" rx="6" fill="#e8c66b"/><rect x="38" y="104" width="124" height="16" rx="7" fill="#c17f2b"/><path d="M40 120 q60 20 120 0v8q-60 18-120 0z" fill="#241B16"/></svg>
+            <span class="menu-tag">Da casa</span>
+          </div>
+          <div class="menu-card-body">
+            <div class="menu-card-top">
+              <h3>Caipira Crispy</h3>
+              <span class="menu-price">R$ 31,90</span>
+            </div>
+            <p>Frango crocante, queijo coalho, maionese de limão e picles.</p>
+            <button class="btn btn--add" data-name="Caipira Crispy">Adicionar ao pedido</button>
+          </div>
+        </article>
+
+        <article class="menu-card" data-reveal>
+          <div class="menu-card-media">
+            <svg viewBox="0 0 200 140" aria-hidden="true"><rect width="200" height="140" fill="#241B16"/><ellipse cx="100" cy="105" rx="70" ry="10" fill="#000" opacity=".3"/><path d="M40 70 q60 -32 120 0 q4 10 -4 16H44q-8-6-4-16z" fill="#DDA64B"/><rect x="42" y="86" width="116" height="12" rx="5" fill="#f2b632"/><rect x="40" y="98" width="120" height="10" rx="4" fill="#3d2415"/><rect x="38" y="108" width="124" height="16" rx="7" fill="#5a3420"/><path d="M40 124 q60 20 120 0v8q-60 18-120 0z" fill="#241B16"/></svg>
+            <span class="menu-tag">Intenso</span>
+          </div>
+          <div class="menu-card-body">
+            <div class="menu-card-top">
+              <h3>Fogo &amp; Bacon</h3>
+              <span class="menu-price">R$ 34,90</span>
+            </div>
+            <p>Blend bovino, bacon crocante, jalapeño, queijo e barbecue defumado.</p>
+            <button class="btn btn--add" data-name="Fogo & Bacon">Adicionar ao pedido</button>
+          </div>
+        </article>
+
+        <article class="menu-card" data-reveal>
+          <div class="menu-card-media">
+            <svg viewBox="0 0 200 140" aria-hidden="true"><rect width="200" height="140" fill="#241B16"/><ellipse cx="100" cy="105" rx="70" ry="10" fill="#000" opacity=".3"/><path d="M40 70 q60 -32 120 0 q4 10 -4 16H44q-8-6-4-16z" fill="#DDA64B"/><rect x="40" y="86" width="120" height="14" rx="6" fill="#e8c66b"/><rect x="38" y="102" width="124" height="18" rx="8" fill="#4a2c19"/><path d="M40 120 q60 20 120 0v8q-60 18-120 0z" fill="#241B16"/></svg>
+          </div>
+          <div class="menu-card-body">
+            <div class="menu-card-top">
+              <h3>Sertão Smash</h3>
+              <span class="menu-price">R$ 32,90</span>
+            </div>
+            <p>Carne smash, queijo coalho, cebola roxa e molho de alho assado.</p>
+            <button class="btn btn--add" data-name="Sertão Smash">Adicionar ao pedido</button>
+          </div>
+        </article>
+
+        <article class="menu-card" data-reveal>
+          <div class="menu-card-media">
+            <svg viewBox="0 0 200 140" aria-hidden="true"><rect width="200" height="140" fill="#241B16"/><ellipse cx="100" cy="108" rx="70" ry="10" fill="#000" opacity=".3"/><path d="M40 58 q60 -30 120 0 q4 10 -4 16H44q-8-6-4-16z" fill="#DDA64B"/><rect x="42" y="74" width="116" height="12" rx="5" fill="#f2b632"/><rect x="38" y="86" width="124" height="15" rx="6" fill="#5a3420"/><rect x="42" y="101" width="116" height="11" rx="5" fill="#c17f2b"/><rect x="38" y="112" width="124" height="15" rx="6" fill="#5a3420"/><path d="M40 127 q60 20 120 0v8q-60 18-120 0z" fill="#241B16"/></svg>
+          </div>
+          <div class="menu-card-body">
+            <div class="menu-card-top">
+              <h3>Brasa Duplo</h3>
+              <span class="menu-price">R$ 39,90</span>
+            </div>
+            <p>Dois burgers, queijo derretido, picles e molho especial.</p>
+            <button class="btn btn--add" data-name="Brasa Duplo">Adicionar ao pedido</button>
+          </div>
+        </article>
+
+        <article class="menu-card" data-reveal>
+          <div class="menu-card-media">
+            <svg viewBox="0 0 200 140" aria-hidden="true"><rect width="200" height="140" fill="#241B16"/><ellipse cx="100" cy="105" rx="70" ry="10" fill="#000" opacity=".3"/><path d="M40 70 q60 -32 120 0 q4 10 -4 16H44q-8-6-4-16z" fill="#DDA64B"/><path d="M42 86 h116 l-8 12q-3 5-9 5H59q-6 0-9-5z" fill="#7cb342"/><rect x="40" y="103" width="120" height="16" rx="7" fill="#6a9a3d"/><path d="M40 120 q60 20 120 0v8q-60 18-120 0z" fill="#241B16"/></svg>
+            <span class="menu-tag">Veggie</span>
+          </div>
+          <div class="menu-card-body">
+            <div class="menu-card-top">
+              <h3>Veggie da Casa</h3>
+              <span class="menu-price">R$ 29,90</span>
+            </div>
+            <p>Burger vegetal, queijo, folhas frescas e molho artesanal.</p>
+            <button class="btn btn--add" data-name="Veggie da Casa">Adicionar ao pedido</button>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- NOSSA BRASA -->
+  <section class="story" id="nossa-brasa">
+    <div class="story-inner">
+      <div class="story-visual" data-reveal>
+        <span class="story-year">Desde 2018</span>
+        <svg class="story-art" viewBox="0 0 320 320" aria-hidden="true">
+          <circle cx="160" cy="160" r="150" fill="none" stroke="#E85D32" stroke-opacity="0.25" stroke-width="1.5"/>
+          <circle cx="160" cy="160" r="110" fill="none" stroke="#DDA64B" stroke-opacity="0.2" stroke-width="1.5"/>
+          <g stroke="#E85D32" stroke-width="3" stroke-linecap="round" opacity="0.8">
+            <line x1="130" y1="230" x2="120" y2="185"/>
+            <line x1="160" y1="235" x2="160" y2="180"/>
+            <line x1="190" y1="230" x2="200" y2="185"/>
+          </g>
+          <path d="M110 190 q50 -30 100 0 q6 14 -6 22 H116 q-12 -8 -6 -22z" fill="#3a2013"/>
+        </svg>
+      </div>
+      <div class="story-content" data-reveal>
+        <h2 class="section-title">Não é só um<br>hambúrguer.</h2>
+        <p class="story-text">
+          A Brasa nasceu de uma ideia simples: fazer comida boa, sem complicação e com muita personalidade. A gente acredita em pão macio, carne bem selada, molho feito na casa e ingredientes que conversam entre si.
+        </p>
+        <ul class="story-points">
+          <li>Carne selada na brasa, todos os dias</li>
+          <li>Molhos e pães feitos na casa</li>
+          <li>Ingredientes escolhidos, sem atalho</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- AVALIAÇÕES -->
+  <section class="reviews" id="avaliacoes">
+    <div class="section-inner">
+      <div class="section-head">
+        <h2 class="section-title">Fala de quem<br>voltou.</h2>
+        <p class="section-sub review-disclaimer">Avaliações fictícias, criadas para fins de demonstração deste projeto.</p>
+      </div>
+
+      <div class="reviews-grid">
+        <figure class="review-card" data-reveal>
+          <div class="review-stars" aria-label="5 de 5 estrelas">★★★★★</div>
+          <blockquote>“Já comi muito hambúrguer artesanal por aí, mas o Brasa Clássico tem outro nível de sabor. O molho da casa faz toda a diferença.”</blockquote>
+          <figcaption>Marina Torres</figcaption>
+        </figure>
+        <figure class="review-card" data-reveal>
+          <div class="review-stars" aria-label="5 de 5 estrelas">★★★★★</div>
+          <blockquote>“O Fogo & Bacon chegou quentinho, o pão macio e o ponto da carne perfeito. Virou pedido fixo aqui de casa.”</blockquote>
+          <figcaption>Diego Almeida</figcaption>
+        </figure>
+        <figure class="review-card" data-reveal>
+          <div class="review-stars" aria-label="5 de 5 estrelas">★★★★★</div>
+          <blockquote>“Atendimento rápido e ambiente com muita personalidade. O Sertão Smash é surpreendentemente bom, recomendo demais.”</blockquote>
+          <figcaption>Camila Ribeiro</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- PEDIDOS / CONTATO -->
+  <section class="cta-order" id="contato">
+    <div class="cta-order-inner" data-reveal>
+      <h2 class="section-title cta-title">Seu próximo<br>favorito está aqui.</h2>
+      <p class="cta-text">Escolha seus itens, chame a gente no WhatsApp e receba as instruções para finalizar o pedido.</p>
+      <a href="https://wa.me/5511999990000" class="btn btn--primary btn--lg" target="_blank" rel="noopener">Pedir pelo WhatsApp <span aria-hidden="true">↗</span></a>
+      <p class="cta-note">Número de demonstração — projeto fictício para portfólio.</p>
+    </div>
+  </section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-top">
+      <a href="#topo" class="logo logo--footer" aria-label="Brasa Burger, início">
+        <span class="logo-line">Brasa</span>
+        <span class="logo-line logo-line--accent">Burger</span>
+      </a>
+
+      <nav aria-label="Navegação do rodapé">
+        <ul class="footer-nav">
+          <li><a href="#topo">Início</a></li>
+          <li><a href="#cardapio">Cardápio</a></li>
+          <li><a href="#nossa-brasa">Nossa Brasa</a></li>
+          <li><a href="#avaliacoes">Avaliações</a></li>
+          <li><a href="#contato">Contato</a></li>
+        </ul>
+      </nav>
+
+      <div class="footer-social" aria-label="Redes sociais (demonstrativas)">
+        <a href="#" onclick="return false;">Instagram</a>
+        <a href="#" onclick="return false;">TikTok</a>
+        <a href="#" onclick="return false;">WhatsApp</a>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="footer-info">
+        <p>Ter. a Dom. · 18h às 00h</p>
+        <p>Cidade Fictícia, BR — projeto demonstrativo</p>
+      </div>
+      <p class="footer-copy">© 2026 Brasa Burger. Projeto fictício criado para fins de portfólio.</p>
+    </div>
+  </div>
+</footer>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script src="script.js"></script>
+</body>
+</html>
